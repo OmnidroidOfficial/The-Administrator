@@ -1,0 +1,62 @@
+### If I've understood things correctly, game objects in other scenes do not have to be included in generic scripts 
+### because Unity as C parser considers scenes themselves like objects or something. (Not the same as calling the script
+### from a different location (ofc -.-").) The bar in the default scene represents the 5 bars of the Gamma scene.
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class xOneStatusChecker : MonoBehaviour
+{
+
+    public float maxBarz = 100;
+    public float currentBarz0;
+    public float currentBarz1;
+    public float currentBarz2;
+    public float currentBarz3;
+    public float currentBarz4;
+    public float currentBarz5;
+
+    public HealthBar xoneStatus;
+
+    void Start()
+    {
+        currentBarz0 = maxBarz;
+        xoneStatus.SetStatusMax(maxBarz);
+    }
+
+    void Update()
+    {
+        if (currentBarz1 != 100)
+        {
+            TakeL(20);
+        }
+
+        if (currentBarz2 != 100)
+        {
+            TakeL(20);
+        }
+
+        if (currentBarz3 != 100)
+        {
+            TakeL(20);
+        }
+
+        if (currentBarz4 != 100)
+        {
+            TakeL(20);
+        }
+
+        if (currentBarz5 != 100)
+        {
+            TakeL(20);
+        }
+    }
+
+    void TakeL(int xonel)
+    {
+        currentBarz0 -= xonel;
+        xoneStatus.SetStatusOne(currentBarz0);
+    }
+}

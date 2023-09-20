@@ -1,0 +1,31 @@
+### Way in the beginning there was this:
+
+/////#: `~xForceInitialize.SampleScreen
+
+    public bool firstLaunchYN;
+    public bool firstLaunchProceedYN;
+    public bool firstLaunchLoad;
+
+
+    public void FirstProgressCheck()
+    {
+        if (firstLaunchYN = PlayerPrefs.GetInt("firstLaunchYN") == 1)
+        {
+            SecondProgressCheck();
+        }
+
+        else if (firstLaunchProceedYN = PlayerPrefs.GetInt("firstLaunchProceedYN") == 1)
+        {
+ //           continue_firstlaunch(); create external reference 
+        }
+
+        else
+        {
+//            initiate_firstlaunch(); create external reference
+        }
+    }
+
+    public void SecondProgressCheck()
+    {
+ //       return_continue(); create external reference
+    }

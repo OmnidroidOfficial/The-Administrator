@@ -1,0 +1,56 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+public class SceneChanger : MonoBehaviour
+{
+    public void LoadTitleScene()
+    {
+        SceneManager.LoadScene("TitleScene");
+    }
+
+    public void LoadSceneDefault()
+    {
+        SceneManager.LoadScene("SceneDefault");
+    }
+
+    public void LoadSceneAlpha()
+    {
+        SceneManager.LoadScene("SceneAlpha");
+    }
+    public void LoadSceneGamma()
+    {
+        SceneManager.LoadScene("SceneGamma");
+    }
+
+    public void LoadSceneDelta()
+    {
+        SceneManager.LoadScene("SceneDelta");
+    }
+
+    public void LoadSceneAccount()
+    {
+        SceneManager.LoadScene("SceneAccount");
+    }    
+
+    public void LoadSectionScene()
+    {
+        SceneManager.LoadScene("SectionScene");
+    }
+
+    public void LoadSceneEval()
+    {
+        SceneManager.LoadScene("SceneEval");
+    }
+
+    public void LoadSceneEndx()
+    {
+        SceneManager.LoadScene("SceneEndx");
+    }
+
+    public void LoadSoundSSettings()
+    {
+        SceneManager.LoadScene("SoundSSettings");
+    }
+
+}

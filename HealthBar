@@ -1,0 +1,24 @@
+### I use "xone" for general concepts that keep the game together basically. "xtwo" is for overall (recurringly processing one-time scripts) progress navigation. 
+### "xthree" is for one-time "story-mode-like" non-recurring-ish pieces of content.
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class HealthBar : MonoBehaviour
+{
+
+    public Slider status_barz0_xone;
+
+    public void SetStatusMax(float currentBarz0)
+    {
+        status_barz0_xone.maxValue = currentBarz0;
+        status_barz0_xone.value = currentBarz0;
+    }
+
+    public void SetStatusOne(float currentBarz0)
+    {
+        status_barz0_xone.value = currentBarz0;
+    }
+}

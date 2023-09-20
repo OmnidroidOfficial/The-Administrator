@@ -1,0 +1,16 @@
+### This must be like on home AI Administrator says hi and at some point text field takes over. That's the grey area. 
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+[System.Serializable]
+public class Dialogue
+{
+    public string xone_dialogue_index;
+
+    [TextArea(1, 3)]
+    public string[] xone_sentences;
+
+}

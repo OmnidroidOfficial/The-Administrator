@@ -1,0 +1,73 @@
+### I've made some mistakes here. The fix must carry the grey area between Inworld AI and my propaganda... :p
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class DialogueManager : MonoBehaviour
+{
+
+    public Text xoneText;
+    public Text dialogueText;
+
+    public Animator animator;
+
+    private Queue<string> xone_sentences;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        xone_sentences = new Queue<string>();
+    }
+
+    public void StartDialogue(Dialogue xone_dialogue)
+    {
+        Debug.Log("Initiating xone dialogue" + xone_dialogue.xone_dialogue_index);
+
+        animator.SetBool("IsOpen", true);
+        
+        xoneText.text = xone_dialogue.xone_dialogue_index;
+        
+        xone_sentences.Clear();
+
+        foreach (string xone_sentence in xone_dialogue.xone_sentences)
+        {
+            xone_sentences.Enqueue(xone_sentence);
+        }
+
+        DisplayNextSentence();
+
+    }
+
+    public void DisplayNextSentence()
+    {
+        if (xone_sentences.Count == 0)
+        {
+            EndDialogue();
+            return;
+        }
+
+        string xone_sentence = xone_sentences.Dequeue();
+        dialogueText.text = xone_sentence;
+        Debug.Log(xone_sentence);
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(xone_sentence));
+    }
+
+    IEnumerator TypeSentence (string xone_sentence)
+    {
+        dialogueText.text = "";
+        foreach (char xone_letter in xone_sentence.ToCharArray())
+        {
+            dialogueText.text += xone_letter;
+            yield return null;
+        }
+    }
+
+    void EndDialogue()
+    {
+        animator.SetBool("IsOpen", false);
+ //       Debug.Log("End of" + xone_dialogue.xone_dialogue_index);
+    }
+}

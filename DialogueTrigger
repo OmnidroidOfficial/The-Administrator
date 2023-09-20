@@ -1,0 +1,16 @@
+### Has relation to the DialogueManager script. 
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DialogueTrigger : MonoBehaviour
+{
+    public Dialogue xone_dialogue;
+
+    public void TriggerDialogue()
+    {
+        FindObjectOfType<DialogueManager>().StartDialogue(xone_dialogue);
+
+    }
+}

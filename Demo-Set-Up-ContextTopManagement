@@ -1,0 +1,29 @@
+### Spoookyyyyyyyy
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class ContextTopManagement : MonoBehaviour
+{
+    int pp_chapter1;
+    int context_chapter1;
+    int pp_chapter2;
+    int context_chapter2;
+
+
+    public void LatestContext()
+    {
+        if (PlayerPrefs.GetInt("pp_chapter2") == 1)
+        {
+            PlayerPrefs.SetInt("context_chapter2", 1);
+        }
+
+        else
+        {
+            PlayerPrefs.SetInt("context_chapter1", 1);
+        }
+    }
+    
+}

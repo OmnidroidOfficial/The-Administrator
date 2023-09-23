@@ -7,10 +7,14 @@ using UnityEngine.UI;
 
 public class ContextTopManagement : MonoBehaviour
 {
+
+// pp_chapterx != 1 means not the latest (0 is untouched, 2 is finished)
+// progress = 1 means start at the beginning of the latest chapter
+
     int pp_chapter1;
     int progress_chapter1;
     int pp_chapter2;
-    int context_chapter2;
+    int progress_chapter2;
 
 // This is demo loop if chapter 1 is finished then chapter 2 is replayable from the start but in other set-up there should be an up-to-date-like "chapter".
     public void LatestContext()

@@ -9,22 +9,25 @@ public class LoopTopManagement : MonoBehaviour
     /// then progress_chapterx gets looped
     /// sectionx_xchapterx == null untouched, == 1 current, == 2 finished
     /// then progress_chapterx == ["max sections count"] when all sections are finished
-    /// so when pp_chapterx == 2
+    /// chapterx_xthree mirrors progress_chapterx must be equal to continue
+    /// then pp_chapterx == 2 finished
     /// </summary>
 
 
-    int progress_chapter1;
-    int section1_xchapter1;
-    int section2_xchapter1;
-    int section3_xchapter1;
-    int pp_chapter1;
+    public int progress_chapter1;
+    public int section1_xchapter1;
+    public int section2_xchapter1;
+    public int section3_xchapter1;
+    public int chapter1_xthree;
+    public int pp_chapter1;
 
 
-    int progress_chapter2;
-    int section1_xchapter2;
-    int section2_xchapter2;
-    int section3_xchapter2;
-    int pp_chapter2;
+    public int progress_chapter2;
+    public int section1_xchapter2;
+    public int section2_xchapter2;
+    public int section3_xchapter2;
+    public int chapter2_xthree;
+    public int pp_chapter2;
 
     public void LoopChapter1()
     {
@@ -65,20 +68,20 @@ public class LoopTopManagement : MonoBehaviour
 
             static void Closing()
             {
-                if (PlayerPrefs.GetInt("progress_chapter1") == 1)
+                if (PlayerPrefs.GetInt("chapter1_xthree") == 1)
                 {
                     // close section
                     PlayerPrefs.SetInt("section1_xchapter1", 2);
                     PlayerPrefs.Save();
                 }
 
-                else if (PlayerPrefs.GetInt("progress_chapter1") == 2)
+                else if (PlayerPrefs.GetInt("chapter1_xthree") == 2)
                 {
                     PlayerPrefs.SetInt("section2_xchapter1", 2);
                     PlayerPrefs.Save();
                 }
 
-                else if (PlayerPrefs.GetInt("progress_chapter1") == 3)
+                else if (PlayerPrefs.GetInt("chapter1_xthree") == 3)
                 {
                     // close section
                     PlayerPrefs.SetInt("section3_xchapter1", 2);
@@ -132,25 +135,25 @@ public class LoopTopManagement : MonoBehaviour
             static void Closing()
             {
 
-                if (PlayerPrefs.GetInt("progress_chapter2") == 1)
+                if (PlayerPrefs.GetInt("chapter2_xthree") == 1)
                 {
                     // close section
                     PlayerPrefs.SetInt("section1_xchapter2", 2);
                     PlayerPrefs.Save();
                 }
 
-                else if (PlayerPrefs.GetInt("progress_chapter2") == 2)
+                else if (PlayerPrefs.GetInt("chapter2_xthree") == 2)
                 {
                     PlayerPrefs.SetInt("section2_xchapter2", 2);
                     PlayerPrefs.Save();
                 }
 
-                else if (PlayerPrefs.GetInt("progress_chapter2") == 3)
+                else if (PlayerPrefs.GetInt("chapter2_xthree") == 3)
                 {
                     // close section
                     PlayerPrefs.SetInt("section3_xchapter2", 2);
                     // close chapter
-//  demo loop                  PlayerPrefs.SetInt("pp_chapter2", 2);
+                    //  demo loop                  PlayerPrefs.SetInt("pp_chapter2", 2);
                     PlayerPrefs.SetInt("pp_chapter2", 0);
                     PlayerPrefs.Save();
                 }

@@ -1,0 +1,342 @@
+using JetBrains.Annotations;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
+/// <summary>
+/// 3 increments for chapter1_xthree;
+/// 7 calls;
+/// 
+/// call_divider => chapter1_xthree;
+/// </summary>
+
+
+
+public class Chapter1Section12345
+{
+    public int chapter1_xthree;
+    public int sectionCaller;
+    public int call_divider;
+    public int max_call_divider;
+    public int p_receipts;
+    public int p_max_receipts;
+    public int clickCounter;
+    public int _xthree;
+
+    public bool layerForward;
+    public bool layerComplete;
+    public bool progressCaller;
+
+    public Text dialogueBox;
+    public Text input_field;
+
+    public string country_es2_s1c1;
+    public string favefood_es2_s2c1;
+    public string story_es2_s3c1;
+
+    private void Start()
+    {
+        _xthree = 0;
+        call_divider = 0;
+        p_receipts = 0;
+        max_call_divider = 7;
+        p_max_receipts = max_call_divider;
+    }
+
+    private async void Update()
+    {
+        for (int call_divider = 0; (call_divider < max_call_divider) & (call_divider == p_receipts) & (layerForward = true); call_divider++)
+        {
+ // redundant           if (layerForward == true) call_divider += 1;
+            void Chapter1Section1()
+            {
+                if ((chapter1_xthree == 1) & (sectionCaller == 1) & (p_receipts == 0))
+                {
+                    if ((call_divider == 1) & (p_receipts == 0))
+                    {
+                        void ContentS1P1()
+                        {
+                            void Start()
+                            {
+                                layerForward = false;
+                                dialogueBox.text = "Welcome to the demo edition of 'The Administrator'!";
+                            }
+
+                            async void Update()
+                            {
+                               static extern void UnityOnBecameVisible(Text dialogueBox);
+                                {
+                                    p_receipts = 1;
+                                    layerForward = true;
+                                }
+
+                            }
+                        }
+                    }
+
+                    else if ((call_divider == 2) & (p_receipts == 1));
+                    {
+                        void ContentS1P2()
+                        {
+                            void Start()
+                            {
+                                layerForward = false;
+                                dialogueBox.text = "'The Administrator' shall greet you.";
+                            }
+
+                            async void Update()
+                            {
+                                static extern void UnityOnBecameVisible(Text dialogueBox);
+                                {
+                                    static extern void UnityOnPointerEnterMessageListener(EventSystem demo_trigger1);
+                                    {
+                                        int i = 0;
+                                        do
+                                        {
+                                            int i = clickCounter.clickCount;
+                                            await demo_trigger1;
+                                        }
+
+                                        while (clickCounter.clickCount < 1);
+
+                                        if (i >= 1)
+                                        {
+                                            layerForward = true; 
+                                            p_receipts = 2;
+                                        }
+                                        else { Debug.Log("No clicks logged."); }
+                                    } 
+                                }
+
+                                _xthree = 2;
+                                chapter1_xthree = 1;
+                                Debug.Log("Call divider is 2; xthree is 2; player receipts is 2; chapter1_xthree is 1.");
+                            }
+                    }
+                }
+              void Chapter1Section2()
+                    {
+
+                        if ((chapter1_xthree == 1) & (sectionCaller == 2) & (p_receipts == 2))
+                        {
+                            if ((call_divider == 3) & (p_receipts == 2))
+                            {
+                                void ContentS2P1()
+                                {
+                                    void Start()
+                                    {
+                                        layerForward = false;
+                                        input_field.text = null;
+                                        dialogueBox.text = "We have a first question for you.";
+                                    }
+
+                                    async void Update()
+                                    {
+                                        static extern void UnityOnBecameVisible(Text dialogueBox);
+                                        {
+                                            static extern void UnityOnPointerEnterMessageListener(EventSystem demo_trigger2);
+                                            {
+                                                int i = 0;
+                                                do
+                                                {
+                                                    int i = clickCounter.clickCount;
+                                                    dialogueBox.text = "Please let us know what country you are from.";
+                                                    await demo_trigger2;
+                                                }
+
+                                                while (clickCounter.clickCount < 2);
+
+                                                if (i >= 2)
+                                                {
+                                                    
+                                                    static extern void UnityOnSubmitMessageListener(EventSystem input_field);
+                                                  {
+
+                                                PlayerPrefs.SetString("country_es2_s1c1", input_field.ToString());
+                                                dialogueBox.text = "Ah, " + country_es2_s1c1 + " !";
+                                                }
+                                                }
+                                                else { Debug.Log("No clicks logged."); }
+                                            }
+
+                                            
+
+                                            layerForward = true;
+                                            Debug.Log("Converting input to string s1c1.");
+                                            p_receipts = 3;
+                                            _xthree = 3;
+                                            chapter1_xthree = 2;
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+              void Chapter1Section3()
+                        {
+                            if ((chapter1_xthree == 1) & (sectionCaller == 3) & (p_receipts == 3))
+                            {
+                                if ((call_divider == 3) & (p_receipts == 3))
+                                {
+                                    void ContentS3P1()
+                                    {
+                                        void Start()
+                                        {
+                                            layerForward = false;
+                                            input_field.text = null;
+                                        dialogueBox.text = "We wonder if" + country_es2_s1c1 + "will be of inspiration to your answer to our next question...";
+                                        }
+
+                                        async void Update()
+                                        {
+                                            static extern void UnityOnPointerEnterMessageListener(EventSystem demo_trigger3);
+                                            {
+                                                int i = 0;
+                                                do
+                                                {
+                                                    int i = clickCounter.clickCount;
+                                                    dialogueBox.text = "What is your favorite food?";
+                                                    await demo_trigger3;
+                                                }
+
+                                                while (clickCounter.clickCount < 2);
+
+                                            if (i >= 2)
+                                            {
+                                                
+
+                                                static extern void UnityOnSubmitMessageListener(EventSystem input_field);
+                                                {
+
+                                                    PlayerPrefs.SetString("favefood_es2_s2c1", input_field.ToString());
+                                                    dialogueBox.text = favefood_es2_s2c1 + ", what a tasty choioce!";
+                                                }
+                                            }
+                                            else { Debug.Log("No clicks logged."); }
+                                            }
+
+                                            layerForward = true;
+                                            Debug.Log("Converting input to string s2c1.");
+                                            p_receipts = 4;
+                                            _xthree = 4;
+                                            chapter1_xthree = 3;
+        
+                                        }
+                                        
+                                    }
+
+              void Chapter1Section4()
+                                {
+                                    if ((chapter1_xthree == 2) & (sectionCaller == 4) & (p_receipts == 4))
+                                    {
+
+                                        if ((call_divider == 4) & (p_receipts == 4))
+                                        {
+                                            void ContentS4P1()
+                                            {
+                                                void Start()
+                                                {
+                                                    layerForward = false;
+                                                    input_field.text = null;
+                                                    dialogueBox.text = "In advance, thank you for your participation. ";
+                                                
+                                                }
+
+                                                async void Update()
+                                                {
+                                                    static extern void UnityOnPointerEnterMessageListener(EventSystem demo_trigger4);
+                                                    {
+                                                        int i = 0;
+                                                        do
+                                                        {
+                                                            int i = clickCounter.clickCount;
+                                                            dialogueBox.text = "The more The Administrator learns about you...";
+                                                            await demo_trigger4;
+                                                        }
+
+                                                        while (clickCounter.clickCount < 2);
+
+                                                        if (i >= 2)
+                                                        {
+                                                            
+
+                                                            static extern void UnityOnSubmitMessageListener(EventSystem input_field);
+                                                            {
+                                                                input_field.text = null;
+                                                                dialogueBox.text = "... the better she can personalize her interaction with you.";
+                                                            }
+                                                        }
+                                                        else { Debug.Log("No clicks logged."); }
+                                                    }  
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                    }
+                            void Chapter1Section5()
+                            {
+                                if ((chapter1_xthree == 3) & (sectionCaller == 5) & (p_receipts == 7))
+                                {
+
+                                    if ((call_divider == 7) & (p_receipts == 7))
+                                    {
+                                        void ContentS4P1()
+                                        {
+                                            void Start()
+                                            {
+                                                layerForward = false;
+                                                input_field.text = null;
+                                                dialogueBox.text = "Please do not shy away from the next question. ";
+
+                                            }
+
+                                            async void Update()
+                                            {
+                                                static extern void UnityOnPointerEnterMessageListener(EventSystem demo_trigger4);
+                                                {
+                                                    int i = 0;
+                                                    do
+                                                    {
+                                                        int i = clickCounter.clickCount;
+                                                        dialogueBox.text = "Please finish the sentence: 'On a deserted island, I would be happiest if I had the following ...'";
+                                                        await demo_trigger4;
+                                                    }
+
+                                                    while (clickCounter.clickCount < 2);
+
+                                                    if (i >= 2)
+                                                    {
+                                                    
+                                                    static extern void UnityOnSubmitMessageListener(EventSystem input_field);
+                                                      {
+                                                    PlayerPrefs.SetString("story_es2_s3c1", input_field.ToString());
+                                                    dialogueBox.text = "'The Administrator' is here to converse with you until press the 'x' button.";
+                                                    }
+                                                    }
+                                                    else { Debug.Log("No clicks logged."); }
+                                                }
+
+                                                
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+
+
+                    }
+
+                }
+                        }
+           
+                   }

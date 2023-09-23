@@ -8,10 +8,10 @@ using UnityEngine.UI;
 public class ContextTopManagement : MonoBehaviour
 {
 
-###
-# pp_chapterx != 1 means not the latest (0 is untouched, 2 is finished)
-# progress_chapterx == 1 means start at the beginning of the latest chapter
-###
+/// <summary>
+/// pp_chapterx != 1 means not the latest (0 is untouched, 2 is finished)
+/// progress_chapterx == 1 means start at the beginning of the latest chapter
+/// </summary>
 
     int pp_chapter1;
     int progress_chapter1;

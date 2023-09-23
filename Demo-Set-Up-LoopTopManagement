@@ -83,7 +83,6 @@ public class LoopTopManagement : MonoBehaviour
                     // close section
                     PlayerPrefs.SetInt("section3_xchapter1", 2);
                     // close chapter
-                    PlayerPrefs.SetInt("progress_chapter1", 2);
                     PlayerPrefs.SetInt("pp_chapter1", 2);
                     PlayerPrefs.Save();
                 }
@@ -151,7 +150,6 @@ public class LoopTopManagement : MonoBehaviour
                     // close section
                     PlayerPrefs.SetInt("section3_xchapter2", 2);
                     // close chapter
-                    PlayerPrefs.SetInt("progress_chapter2", 2);
                     PlayerPrefs.SetInt("pp_chapter2", 2);
                     PlayerPrefs.Save();
                 }

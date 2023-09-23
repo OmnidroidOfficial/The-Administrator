@@ -1,0 +1,107 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SectionContent : MonoBehaviour
+{
+    public int completedObjectives;
+    public int maxObjectives;
+    public int _xthree;
+
+    public int chapterCountStatus;
+    public int sectionCountStatus;
+
+    public bool layerForward;
+    public bool sectionCompleted;
+
+    public string loadModus;
+    public string chapterCookie;
+    public string chapterStatus;
+
+    public bool layerComplete;
+    public bool progressCaller;
+
+    public int xthree_status;
+    public int chapter_status;
+    public int p_status;
+
+    public int countObjectives;
+    public int p_objectives;
+
+    public int chapter_sections;
+    public int completed_sections;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+// objectives
+        completedObjectives = 0;
+// player
+        p_objectives = 0;
+// section
+        _xthree = 0;
+    }
+
+    // Update is called once per frame
+    
+
+    private void Update()
+    {
+ //       void ChapterProgress()
+  //      {
+            for (xthree_status = 0; xthree_status < 5; xthree_status++)
+            {
+                if ((p_objectives == maxObjectives) & (p_status == 5))
+                {
+                    _xthree = 5;
+                    chapter_status = xthree_status;
+                    completed_sections = chapter_sections;
+                    //                  completeSection();
+                    Debug.Log("Chapter is finished.");
+                }
+                else if ((p_objectives == countObjectives) & (p_status != 5))
+                {
+                    _xthree += 1;
+                    chapter_status = xthree_status;
+                    layerForward = true;
+                    completed_sections += 1;
+                    Debug.Log("Just finished chapter section. Off to section" + completed_sections);
+                }
+                else
+                {
+                    layerForward = false;
+                    Debug.LogFormat("Chapter " + chapterCountStatus, "section " + sectionCountStatus, "is currently in progress. ActiveCookie" + chapterCookie);
+                }
+            }
+
+//        }
+    }
+
+    public void forwardReload()
+    {
+        if (layerForward == true)
+        {
+            layerComplete = true;
+            progressCaller = false;
+        }
+        else if ((layerForward == false))
+        {
+            layerComplete = false;
+            progressCaller = true;
+        }
+
+        else
+        {
+            Debug.Log("No active layer on forwardReload.");
+        }
+    }
+
+    public void completeSection()
+    {
+        if ((maxObjectives == completedObjectives) & (layerForward == true))
+        {
+            sectionCompleted = true;
+            _xthree = 5;
+        }
+    }
+}

@@ -1,0 +1,163 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LoopTopManagement : MonoBehaviour
+{
+    /// <summary>
+    /// if pp_chapterx == 1
+    /// then progress_chapterx gets looped
+    /// sectionx_xchapterx == null untouched, == 1 current, == 2 finished
+    /// then progress_chapterx == ["max sections count"] when all sections are finished
+    /// so when pp_chapterx == 2
+    /// </summary>
+
+
+    int progress_chapter1;
+    int section1_xchapter1;
+    int section2_xchapter1;
+    int section3_xchapter1;
+    int pp_chapter1;
+
+
+    int progress_chapter2;
+    int section1_xchapter2;
+    int section2_xchapter2;
+    int section3_xchapter2;
+    int pp_chapter2;
+
+    public void LoopChapter1()
+    {
+        if (PlayerPrefs.GetInt("progress_chapter1") == 1)
+        {
+            PlayerPrefs.SetInt("pp_chapter1", 1);
+            PlayerPrefs.Save();
+
+            static void Start()
+            {
+                if (PlayerPrefs.GetInt("section1_xchapter1") != 2)
+                {
+                    PlayerPrefs.SetInt("section1_xchapter1", 1);
+                    // start conditions xthree for section 1 chapter 1
+                    PlayerPrefs.SetString("country_es2_s1c1", null);
+                    PlayerPrefs.Save();
+                }
+
+                else if (PlayerPrefs.GetInt("section2_xchapter1") != 2)
+                {
+                    PlayerPrefs.SetInt("progress_chapter1", 2);
+                    PlayerPrefs.SetInt("section2_xchapter1", 1);
+                    // start conditions xthree for section 2 chapter 1
+                    PlayerPrefs.SetString("favefood_es2_s1c1", null);
+                    PlayerPrefs.Save();
+                }
+
+                else if (PlayerPrefs.GetInt("section3_xchapter1") != 2)
+                {
+                    PlayerPrefs.SetInt("progress_chapter1", 3);
+                    PlayerPrefs.SetInt("section3_xchapter1", 1);
+                    // start conditions xthree for section 3 chapter 1
+                    PlayerPrefs.SetString("story_es2_s1c1", null);
+                    PlayerPrefs.Save();
+                }
+
+            }
+
+            static void Closing()
+            {
+                if (PlayerPrefs.GetInt("progress_chapter1") == 1)
+                {
+                    // close section
+                    PlayerPrefs.SetInt("section1_xchapter1", 2);
+                    PlayerPrefs.Save();
+                }
+
+                else if (PlayerPrefs.GetInt("progress_chapter1") == 2)
+                {
+                    PlayerPrefs.SetInt("section2_xchapter1", 2);
+                    PlayerPrefs.Save();
+                }
+
+                else if (PlayerPrefs.GetInt("progress_chapter1") == 3)
+                {
+                    // close section
+                    PlayerPrefs.SetInt("section3_xchapter1", 2);
+                    // close chapter
+                    PlayerPrefs.SetInt("progress_chapter1", 2);
+                    PlayerPrefs.SetInt("pp_chapter1", 2);
+                    PlayerPrefs.Save();
+                }
+
+            }
+
+        }
+
+    }
+
+    public void LoopChapter2()
+    {
+        if (PlayerPrefs.GetInt("progress_chapter2") == 1)
+
+      // redundant     PlayerPrefs.SetInt("pp_chapter2", 1);
+            PlayerPrefs.Save();
+        {
+            static void Start()
+            {
+                if (PlayerPrefs.GetInt("section1_xchapter2") != 2)
+                {
+                    PlayerPrefs.SetInt("section1_xchapter2", 1);
+                    // start conditions xthree for section 1 chapter 2
+                    PlayerPrefs.SetString("ink_1_es2_s1c2", null);
+                    PlayerPrefs.Save();
+                }
+
+                else if (PlayerPrefs.GetInt("section2_xchapter2") != 2)
+                {
+                    PlayerPrefs.SetInt("progress_chapter2", 2);
+                    PlayerPrefs.SetInt("section2_xchapter2", 1);
+                    // start conditions xthree for section 2 chapter 2
+                    PlayerPrefs.SetString("ink_2_es2_s1c2", null);
+                    PlayerPrefs.Save();
+                }
+
+                else if (PlayerPrefs.GetInt("section3_xchapter2") != 2)
+                {
+                    PlayerPrefs.SetInt("progress_chapter2", 3);
+                    PlayerPrefs.SetInt("section3_xchapter2", 1);
+                    // start conditions xthree for section 3 chapter 2
+                    PlayerPrefs.SetString("ink_3_es2_s1c2", null);
+                    PlayerPrefs.Save();
+                }
+            }
+
+            static void Closing()
+            {
+
+                if (PlayerPrefs.GetInt("progress_chapter2") == 1)
+                {
+                    // close section
+                    PlayerPrefs.SetInt("section1_xchapter2", 2);
+                    PlayerPrefs.Save();
+                }
+
+                else if (PlayerPrefs.GetInt("progress_chapter2") == 2)
+                {
+                    PlayerPrefs.SetInt("section2_xchapter2", 2);
+                    PlayerPrefs.Save();
+                }
+
+                else if (PlayerPrefs.GetInt("progress_chapter2") == 3)
+                {
+                    // close section
+                    PlayerPrefs.SetInt("section3_xchapter2", 2);
+                    // close chapter
+                    PlayerPrefs.SetInt("progress_chapter2", 2);
+                    PlayerPrefs.SetInt("pp_chapter2", 2);
+                    PlayerPrefs.Save();
+                }
+
+            }
+
+        }
+    }
+}

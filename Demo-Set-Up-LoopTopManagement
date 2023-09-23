@@ -150,7 +150,8 @@ public class LoopTopManagement : MonoBehaviour
                     // close section
                     PlayerPrefs.SetInt("section3_xchapter2", 2);
                     // close chapter
-                    PlayerPrefs.SetInt("pp_chapter2", 2);
+//  demo loop                  PlayerPrefs.SetInt("pp_chapter2", 2);
+                    PlayerPrefs.SetInt("pp_chapter2", 0);
                     PlayerPrefs.Save();
                 }
 

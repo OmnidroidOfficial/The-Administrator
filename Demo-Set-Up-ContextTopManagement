@@ -18,11 +18,13 @@ public class ContextTopManagement : MonoBehaviour
         if (PlayerPrefs.GetInt("pp_chapter2") == 1)
         {
             PlayerPrefs.SetInt("progress_chapter2", 1);
+            PlayerPrefs.Save();
         }
 
         else
         {
             PlayerPrefs.SetInt("progress_chapter1", 1);
+            PlayerPrefs.Save();
         }
     }
     

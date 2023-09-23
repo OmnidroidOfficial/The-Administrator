@@ -1,0 +1,67 @@
+/// There is some excessive use of variables that I need to see to oversee.
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ChapterContent
+{
+    public string activeModus;
+    public string chapterCookie;
+    public string loadModus;
+    public int _xthree;
+    public bool layerForward;
+    public bool firstCall;
+    public bool secondCall;
+    public bool thirdCall;
+    public bool fourthCall;
+    public bool fifthCall;
+    public bool sectionCompleted;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        layerForward = false;
+        loadModus = null;
+        loadModus = chapterCookie;
+    }
+
+    // Update is called once per frame
+    async void Update()
+    {
+        if (_xthree == 1)
+        {
+            firstCall = true;
+            activeModus = "firstCall";
+            chapterCookie = activeModus;
+        }
+
+        else if (_xthree == 2)
+        {
+            secondCall = true;
+            activeModus = "secondCall";
+            chapterCookie = activeModus;
+        }
+
+        else if (_xthree == 3)
+        {
+            thirdCall = true;
+            activeModus = "thirdCall";
+            chapterCookie = activeModus;
+        }
+
+        else if (_xthree == 4)
+        {
+            fourthCall = true;
+            activeModus = "fourthCall";
+            chapterCookie = activeModus;
+        }
+
+        else if (_xthree == 5)
+        {
+            fifthCall = true;
+            activeModus = "fifthCall";
+            chapterCookie = activeModus;
+              
+        }
+}

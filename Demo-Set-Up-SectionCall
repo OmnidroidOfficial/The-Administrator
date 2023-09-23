@@ -1,0 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SectionCall : MonoBehaviour
+{
+    public bool firstCall;
+    public bool secondCall;
+    public bool thirdCall;
+    public bool fourthCall;
+    public bool fifthCall;
+    public int sectionCaller;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        sectionCaller = 0;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (firstCall == true) sectionCaller = 1;
+        else if (secondCall == true) sectionCaller = 2;
+        else if (thirdCall == true) sectionCaller = 3;
+        else if (fourthCall == true) sectionCaller = 4;
+        else if (fifthCall == true) sectionCaller = 5;
+    }
+}

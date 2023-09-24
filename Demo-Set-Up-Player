@@ -32,8 +32,6 @@ public class Player : MonoBehaviour
             {
                 p_sections += quest.sectionCount;
             }
-
-
         }
     }
 
@@ -84,8 +82,8 @@ public class Player : MonoBehaviour
     {
         es2_p_sections = p_sections;
         es2_p_objectives = p_objectives;
+        es2_p_finishedchapters = p_finishedchapters;
         es2_alpha_entries = alpha_entries;
-
     }
 }
 

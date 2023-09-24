@@ -1,0 +1,92 @@
+// After this is merged with DialogueManager, it might be rewritten to such an extent that the current oversight is not traceable anymore. I haven't checked but 
+// comparing code scripts/snippets is commit on cheeks.
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Player : MonoBehaviour
+{
+    public int p_sections = 0;
+    public int es2_p_sections;
+    public int p_objectives = 0;
+    public int es2_p_objectives;
+    public int p_finishedchapters = 0;
+    public int es2_p_finishedchapters;
+    public int alpha_entries = 0;
+    public int es2_alpha_entries;
+
+    public Quest quest;
+
+    public void PReadSection()
+    {   
+        p_sections += 1;
+        PlayerPrefs.SetInt("es2_p_sections", +1);
+        PlayerPrefs.Save();
+        Debug.Log("p_sections count is" + p_sections + "; es2_p_sections count is" + es2_p_sections);
+
+        if (quest.isActive)
+        {
+            quest.goal.SectionRead();
+            if (quest.goal.IsReached())
+            {
+                p_sections += quest.sectionCount;
+            }
+
+
+        }
+    }
+
+    public void PCompleteObjective()
+    {
+        p_objectives += 1;
+        PlayerPrefs.SetInt("es2_p_objectives", +1);
+        PlayerPrefs.Save();
+        Debug.Log("p_objectives count is" + p_objectives + "; es2_p_objectives count is" + es2_p_objectives);
+
+        if (quest.isActive)
+        {
+            quest.goal.ObjectiveCompleted();
+            if (quest.goal.IsReached())
+            {
+                p_objectives += quest.objectiveCount;
+            }
+        }
+    }
+
+    public void PFinishChapter()
+    {
+        p_finishedchapters += 1;
+        PlayerPrefs.SetInt("es2_p_finishedchapters", +1);
+        PlayerPrefs.Save();
+        Debug.Log("p_finishedchapters count is" + p_finishedchapters + "; es2_p_objectives count is" + es2_p_finishedchapters);
+
+        if (quest.isActive)
+        {
+            quest.goal.ChapterFinished();
+            if (quest.goal.IsReached())
+            {
+                quest.Complete();
+            }
+        }
+    }
+
+    public void PAlphaEntry()
+    {
+        alpha_entries += 1;
+        PlayerPrefs.SetInt("es2_alpha_entries", +1);
+        PlayerPrefs.Save();
+        Debug.Log("alpha entries count is" + alpha_entries + "; es2 alpha entries count is" + es2_alpha_entries);
+
+    }
+
+    public void UpdatePStats()
+    {
+        es2_p_sections = p_sections;
+        es2_p_objectives = p_objectives;
+        es2_alpha_entries = alpha_entries;
+
+    }
+}
+
+

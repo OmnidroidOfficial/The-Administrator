@@ -1,0 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class QuestGiver : MonoBehaviour
+{
+    public Quest quest;
+
+    public Player player;
+
+    public GameObject questWindow;
+    public Text chaptertitleText;
+    public Text paragraphtextText;
+    public Text sectionCountText;
+    public Text objectiveCountText;
+
+    public void OpenQuestWindow()
+    {
+        questWindow.SetActive(true);
+        Debug.Log("Quest window opened.");
+        Debug.Log(chaptertitleText.text = quest.chaptertitle);
+        Debug.Log(paragraphtextText.text = quest.paragraphtext);
+        Debug.Log(sectionCountText.text = quest.sectionCount.ToString());
+        Debug.Log(objectiveCountText.text = quest.objectiveCount.ToString());
+    }
+
+    public void AcceptQuest()
+    {
+        questWindow.SetActive(false);
+        quest.isActive = true;
+        // give to player
+        player.quest = quest;
+    }
+}

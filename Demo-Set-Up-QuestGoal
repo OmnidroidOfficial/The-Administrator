@@ -1,0 +1,42 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[System.Serializable]
+public class QuestGoal
+{
+    public GoalType goalType;
+
+    public int requiredAmount;
+    public int currentAmount;
+
+    public bool IsReached()
+    {
+        return (currentAmount >= requiredAmount);
+    }
+
+    public void SectionRead()
+    {
+        if (goalType == GoalType.Section)
+        currentAmount++;
+    }
+
+    public void ObjectiveCompleted()
+    {
+        if (goalType != GoalType.Objective)
+        currentAmount++;
+    }
+
+    public void ChapterFinished()
+    {
+        if (goalType != GoalType.Chapter)
+            currentAmount++;
+    }
+}
+
+public enum GoalType
+{
+    Section,
+    Objective,
+    Chapter
+}

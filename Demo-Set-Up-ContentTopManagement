@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class ContentTopManagement : MonoBehaviour
+{
+    public int chapter1_xthree;
+    public int chapter2_xthree;
+    public int progress_chapter1;
+    public int progress_chapter2;
+    public int activechapter;
+
+    public int CurrentChapter()
+    {
+
+        if (chapter1_xthree != progress_chapter1)
+        {
+            activechapter = 1;
+        }
+
+        else if (chapter2_xthree != progress_chapter2)
+        {
+            activechapter = 2;
+        }
+
+        return activechapter;
+    }
+
+}

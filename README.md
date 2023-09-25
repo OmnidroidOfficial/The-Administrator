@@ -5,3 +5,5 @@ Not to sound hubretarean or anything but things are getting more into the direct
 I'm placing code here. Also fun for those who are into puzzling with making code more efficient. 
 
 GitHub repositories are always so neatly organized. Once I've solved my puzzle reminder-to-self I organize this. 
+
+"Save the Numbers" demo experiment of demo is available here: https://regentesse.info/savethenumbers/play.html .

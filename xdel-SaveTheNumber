@@ -1,1 +1,28 @@
-#
+// I must experience the process of building at this point. WebGL is the most cross platform option after dedicated server, but the latest (Demo and 1.0 are set to Android for android)
+// was set to Windows (.exe). Hoping the switch does not cause error. Also writing overall recurring noob code to see it in practice. (And Ink works... :D )
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class SaveTheNumber : MonoBehaviour
+{
+
+    public int es3_savethis;
+    public int this_wecount;
+    public Text this_wetext;
+    public Text beetjetypen;
+    // Start is called before the first frame update
+    void Start()
+    {
+        this_wecount = 0;
+        this_wetext.text = "Save the Number";
+    }
+
+    
+    public void Clicking()
+    {
+        this_wecount++;
+        this_wetext.text = "Save the Number" + this_wecount + beetjetypen.text;
+    }
+}

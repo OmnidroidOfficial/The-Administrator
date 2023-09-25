@@ -1,0 +1,23 @@
+// Cloud save on exit is intended default for "The Administrator". This is lil trial.
+
+using Ink.Parsed;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ExitGame : MonoBehaviour
+{
+    public int es3_savethis;
+    public int this_wecount;
+    
+    public void exitgame()
+    {
+        es3_savethis = this_wecount;
+
+        var cloud = new ES3Cloud("https://www.regentesse.info/ES3Cloud.php", "424eae29be9d");
+        StartCoroutine(cloud.Sync("TestSaveFile.es3"));
+        Debug.Log(es3_savethis);
+        Debug.Log("exitgame");
+        Application.Quit();
+    }
+}

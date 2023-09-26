@@ -1,0 +1,61 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class SequenceKiller : MonoBehaviour
+{
+    public Text sequenceKilla;
+    private static int touchCounter;
+//    private Touch touch;
+  
+    void Start()
+    {
+        sequenceKilla.text = "Executing C0P" + SequenceIndicator.xone_indicator;
+        touchCounter = 0;
+    }
+
+    void Update()
+    {
+        if (ContentManagement.xtwo_in_received == 2)
+        {
+            sequenceKilla.text = "Executing C0P" + SequenceIndicator.xone_indicator + "Touch the screen 3 times. Times touched" + touchCounter;
+            touchCounter = Input.touchCount;
+            if (Input.touchCount == 3)
+            {
+                //                touch = Input.GetTouch(3);
+                sequenceKilla.text = "Killing round 2 of sequence...";
+                ContentManagement.xtwo_in_sent = 2;
+            }
+        }
+
+        if (ContentManagement.xtwo_in_received == 3)
+        {
+            sequenceKilla.text = "Executing C0P" + SequenceIndicator.xone_indicator + "Touch the screen 3 times. Times touched" + touchCounter;
+            touchCounter = Input.touchCount;
+            if (Input.touchCount == 3)
+            {
+                //                touch = Input.GetTouch(3);
+                sequenceKilla.text = "Killing round 3 of sequence...";
+                ContentManagement.xtwo_in_sent = 3;
+            }
+        }
+
+        if (ContentManagement.xtwo_in_received == 4)
+        {
+            sequenceKilla.text = "Executing C0P" + SequenceIndicator.xone_indicator + "Touch the screen 3 times. Times touched" + touchCounter;
+            touchCounter = Input.touchCount;
+            if (Input.touchCount == 3)
+            {
+                //                touch = Input.GetTouch(3);
+                sequenceKilla.text = "Killing round 3 of sequence...";
+                ContentManagement.xtwo_in_sent = 4;
+            }
+        }
+
+        if (SequenceIndicator.xone_indicator == 4)
+        {
+            sequenceKilla.text = "We here fam xone indicator is 4.";
+        }
+    }
+}

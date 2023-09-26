@@ -6,27 +6,30 @@ using UnityEngine.UI;
 
 public class SequenceIndicator : MonoBehaviour
 {
-    public int xone_indicator;
-    public int xtwo_out_sent;
-    public int xtwo_out_received;
+    static public int xone_indicator;
+    static public int xtwo_out_sent;
     public Text xone_sequence;
-    // Start is called before the first frame update
+    
     void Start()
     {
         xtwo_out_sent = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        for (int xone_indicator = 0; (xone_indicator < 5); xone_indicator++)
+        for (xone_indicator = 0; (xone_indicator < 5); xone_indicator++)
         {
             do
             {
                 xtwo_out_sent = xone_indicator;
                 xone_sequence.text = "Executing C0P" + xone_indicator;
             }
-            while (xtwo_out_received != xtwo_out_sent);
+            while (ContentManagement.xtwo_out_received != xtwo_out_sent);
+        }
+
+        if (xone_indicator == 5)
+        {
+            xone_sequence.text = "End of demo.";
         }
     }
 }

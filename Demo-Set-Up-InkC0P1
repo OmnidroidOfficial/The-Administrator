@@ -29,10 +29,7 @@ public class InkC0P1 : MonoBehaviour
     {
         if (ContentManagement.xtwo_in_received == 1)
         {
-            void Awake()
-            {
                 StartStory();
-            }
         }
     }
 

@@ -11,8 +11,6 @@ public class InkC0P1 : MonoBehaviour
     [SerializeField]
     private TextAsset inkJSONAsset;
     public Story story;
-    public int xtwo_in_received;
-    public int xtwo_in_sent;
 
     [SerializeField]
     private Canvas canvas;
@@ -29,7 +27,7 @@ public class InkC0P1 : MonoBehaviour
 
     private void Update()
     {
-        if (xtwo_in_received == 1)
+        if (ContentManagement.xtwo_in_received == 1)
         {
             void Awake()
             {
@@ -70,8 +68,8 @@ public class InkC0P1 : MonoBehaviour
                 foreach (string ppstager in story.currentTags)
                 {
                     inkpref = ppstager;
-                    PlayerPrefs.SetString(inkpref, text);
-                    Debug.Log("Saved the following inkprefs" + inkpref);
+                    PlayerPrefs.SetString(inkpref, "Stage 1" + text);
+                    Debug.Log("Saved the following inkprefs" + inkpref + text);
                 }
             }
         }
@@ -96,7 +94,7 @@ public class InkC0P1 : MonoBehaviour
             choice.onClick.AddListener(delegate {
                 StartStory();
             });
-            xtwo_in_sent = 1;
+            ContentManagement.xtwo_in_sent = 1;
         }
     }
 

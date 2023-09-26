@@ -53,9 +53,9 @@ public class SequenceKiller : MonoBehaviour
             }
         }
 
-        if (SequenceIndicator.xone_indicator == 4)
+        if (SequenceIndicator.xone_indicator == 5)
         {
-            sequenceKilla.text = "We here fam xone indicator is 4.";
+            sequenceKilla.text = "We here fam xone indicator is 5.";
         }
     }
 }

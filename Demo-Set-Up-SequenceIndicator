@@ -30,6 +30,7 @@ public class SequenceIndicator : MonoBehaviour
         if (xone_indicator == 5)
         {
             xone_sequence.text = "End of demo.";
+            ContentManagement.xtwo_out_received = 5;
         }
     }
 }

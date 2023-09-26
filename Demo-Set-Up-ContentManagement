@@ -5,13 +5,12 @@ using UnityEngine;
 [System.Serializable]
 public class ContentManagement : MonoBehaviour
 {
-    public int xtwo_out_sent;
-    public int xtwo_in_sent;
-    public int xtwo_out_received;
-    public int xtwo_in_received;
+    static public int xtwo_in_sent;
+    static public int xtwo_in_received;
+    static public int xtwo_out_received;
     public void Update()
     {
-        switch (xtwo_out_sent)
+        switch (SequenceIndicator.xtwo_out_sent)
         {
             case 1:
                 xtwo_in_received = 1;

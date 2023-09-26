@@ -12,14 +12,13 @@ public class SequenceIndicator : MonoBehaviour
     
     void Update()
     {
-        for (xone_indicator = 0; (xone_indicator <= 5); xone_indicator++)
+        for (xone_indicator = 0; xone_indicator <= 5; xone_indicator++)
         {
-            do
+            while (ContentManagement.xtwo_out_received != xtwo_out_sent)
             {
                 xtwo_out_sent = xone_indicator;
                 xone_sequence.text = "Executing C0P" + xone_indicator;
             }
-            while (ContentManagement.xtwo_out_received != xtwo_out_sent);
         }
 
         if (xone_indicator == 5)

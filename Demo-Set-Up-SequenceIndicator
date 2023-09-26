@@ -10,11 +10,6 @@ public class SequenceIndicator : MonoBehaviour
     static public int xtwo_out_sent;
     public Text xone_sequence;
     
-    void Start()
-    {
-        xtwo_out_sent = 0;
-    }
-
     void Update()
     {
         for (xone_indicator = 0; (xone_indicator <= 5); xone_indicator++)

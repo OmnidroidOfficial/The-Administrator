@@ -17,7 +17,7 @@ public class SequenceIndicator : MonoBehaviour
 
     void Update()
     {
-        for (xone_indicator = 0; (xone_indicator < 5); xone_indicator++)
+        for (xone_indicator = 0; (xone_indicator <= 5); xone_indicator++)
         {
             do
             {

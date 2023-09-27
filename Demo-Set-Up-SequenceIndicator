@@ -8,23 +8,22 @@ public class SequenceIndicator : MonoBehaviour
 {
     static public int xone_indicator;
     static public int xtwo_out_sent;
+    static public int xtwo_out_received;
     public Text xone_sequence;
-    
-    void Update()
+
+    void Start()
     {
-        for (xone_indicator = 1; xone_indicator <= 5; xone_indicator++)
+        xone_indicator = xtwo_out_sent;
+        Debug.Log("xone indicator is" + xone_indicator);
+
+        if ((xtwo_out_received == xtwo_out_sent) & (xtwo_out_sent <= 5))
         {
-            while (ContentManagement.xtwo_out_received != xtwo_out_sent)
-            {
-                xtwo_out_sent = xone_indicator;
-                xone_sequence.text = "Executing C0P" + xone_indicator;
-            }
+            xtwo_out_sent++;
         }
 
         if (xone_indicator == 5)
         {
-            xone_sequence.text = "End of demo.";
-            ContentManagement.xtwo_out_received = 5;
+            Debug.Log("End of demo.");
         }
     }
 }

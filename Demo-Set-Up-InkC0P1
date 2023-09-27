@@ -20,16 +20,16 @@ public class InkC0P1 : MonoBehaviour
     private Text textPrefab;
     [SerializeField]
     private Button buttonPrefab;
-    public string ppstager;
+    static public string ppstager;
     public string inkpref;
 
     public static event Action<Story> OnCreateStory;
 
-    private void Update()
+    public InkC0P1()
     {
         if (ContentManagement.xtwo_in_received == 1)
         {
-                StartStory();
+            StartStory();
         }
     }
 
@@ -66,6 +66,7 @@ public class InkC0P1 : MonoBehaviour
                 {
                     inkpref = ppstager;
                     PlayerPrefs.SetString(inkpref, "Stage 1" + text);
+                    PlayerPrefs.Save();
                     Debug.Log("Saved the following inkprefs" + inkpref + text);
                 }
             }

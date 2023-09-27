@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,19 +8,33 @@ public class SequenceKiller : MonoBehaviour
 {
     public Text sequenceKilla;
     private static int touchCounter;
-//    private Touch touch;
+    //    private Touch touch;
   
     void Start()
     {
-        sequenceKilla.text = "Executing C0P" + SequenceIndicator.xone_indicator;
-        touchCounter = 0;
+        Debug.Log("via sequence killer xone_indicator is" + SequenceIndicator.xone_indicator);
     }
 
     void Update()
     {
-        if (ContentManagement.xtwo_in_received == 2)
+        while (SequenceIndicator.xone_indicator == 0)
         {
-            sequenceKilla.text = "Executing C0P" + SequenceIndicator.xone_indicator + "Touch the screen 3 times. Times touched" + touchCounter;
+            touchCounter = 0;
+            sequenceKilla.text = "Touch the screen 3 times. Times touched" + touchCounter;
+            Debug.Log("Executing C0P" + SequenceIndicator.xone_indicator);
+            touchCounter = Input.touchCount;
+            if (Input.touchCount == 3)
+            {
+                //                touch = Input.GetTouch(3);
+                sequenceKilla.text = "Killing round 2 of sequence...";
+                SequenceIndicator.xtwo_out_received = 0;
+            }
+        }
+
+        while (ContentManagement.xtwo_in_received == 2)
+        {
+            sequenceKilla.text = "Touch the screen 3 times. Times touched" + touchCounter;
+            Debug.Log("Executing C0P" + SequenceIndicator.xone_indicator);
             touchCounter = Input.touchCount;
             if (Input.touchCount == 3)
             {
@@ -29,9 +44,10 @@ public class SequenceKiller : MonoBehaviour
             }
         }
 
-        if (ContentManagement.xtwo_in_received == 3)
+        while (ContentManagement.xtwo_in_received == 3)
         {
-            sequenceKilla.text = "Executing C0P" + SequenceIndicator.xone_indicator + "Touch the screen 3 times. Times touched" + touchCounter;
+            sequenceKilla.text = "Touch the screen 3 times. Times touched" + touchCounter;
+            Debug.Log("Executing C0P" + SequenceIndicator.xone_indicator);
             touchCounter = Input.touchCount;
             if (Input.touchCount == 3)
             {
@@ -41,9 +57,10 @@ public class SequenceKiller : MonoBehaviour
             }
         }
 
-        if (ContentManagement.xtwo_in_received == 4)
+        while (ContentManagement.xtwo_in_received == 4)
         {
-            sequenceKilla.text = "Executing C0P" + SequenceIndicator.xone_indicator + "Touch the screen 3 times. Times touched" + touchCounter;
+            sequenceKilla.text = "Touch the screen 3 times. Times touched" + touchCounter;
+            Debug.Log("Executing C0P" + SequenceIndicator.xone_indicator);
             touchCounter = Input.touchCount;
             if (Input.touchCount == 3)
             {
@@ -53,8 +70,9 @@ public class SequenceKiller : MonoBehaviour
             }
         }
 
-        if (SequenceIndicator.xone_indicator == 5)
+        while (ContentManagement.xtwo_in_received == 5)
         {
+            ContentManagement.xtwo_in_sent = 5;
             sequenceKilla.text = "We here fam xone indicator is 5.";
         }
     }

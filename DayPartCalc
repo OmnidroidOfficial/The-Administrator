@@ -1,0 +1,33 @@
+// Code takes too long to execute for rendering WebGL lil thingy for now so this is here.
+
+    public void dayPartCalc()
+    {
+        string dayVal1 = DateTime.Now.ToLongTimeString();
+        TimeSpan partYes = TimeSpan.Parse(dayVal1);
+//        string dayVal2 = DateTime.Now.AddHours(+1).AddMinutes(+7).ToString();
+//        TimeSpan minusOne = TimeSpan.Parse(dayVal2);
+        TimeSpan partZero = new TimeSpan(0, 0, 0, 0);
+//        TimeSpan.Compare(partZero, minusOne); 
+        TimeSpan partOne = new TimeSpan(12, 0, 0, 0);
+        TimeSpan partTwo = new TimeSpan(18, 0, 0, 0);
+        TimeSpan partThree = new TimeSpan(22, 0, 0, 0);
+        int compOne = partZero.CompareTo(partOne);
+        int compTwo = partZero.CompareTo(partTwo);
+        int compThree = partZero.CompareTo(partThree);
+        int compUter = partZero.CompareTo(partYes);
+        
+        if (compUter <= compOne)
+        {
+            dayPart.text = "Morning";
+        }
+        else if (compUter <= compTwo)
+        {
+            dayPart.text = "Afternoon";
+        }
+        else if (compUter <= compThree)
+        {
+            dayPart.text = "Evening";
+        }
+
+        Debug.Log("It is " + dayPart.text);
+    }
